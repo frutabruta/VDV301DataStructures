@@ -29,19 +29,21 @@ public:
     QString NameLcd="";
     QString NameRear="";
     QString NameInner="";
-    bool transferTrain=0;
-    bool transferMetroA=0;
-    bool transferMetroB=0;
-    bool transferMetroC=0;
-    bool transferMetroD=0;
-    bool transferAirplane=0;
-    bool transferFerry=0;
-    bool onRequest=0;
+    bool transferTrain=false;
+    bool transferMetroA=false;
+    bool transferMetroB=false;
+    bool transferMetroC=false;
+    bool transferMetroD=false;
+    bool transferAirplane=false;
+    bool transferFerry=false;
+    bool onRequest=false;
+    bool neozn=false; //ignore on request announcement
+    bool zast=false; //enforce stop driver announcement in stop on request stops
     bool zsol=0; //prujezdna konecna, change of destination
     QString additionalTextMessage="";
 
 
-    int isViapoint=0;
+    bool isViapoint=false;
 
     QString platformName="";
 

@@ -1,5 +1,10 @@
 # VDV301DataStructures
 Library of data storage classes for use with VDV301
+- 20250312_1902
+    - stoppoint
+        - all bool values default to false
+        - isViapoint changed data type to bool
+        - added neozn and zast sttributes
 - 20250222_2125
     - Vdv301Trip
         - changed additionalTextMessage1-9 to additionalTextMessageList1-9
