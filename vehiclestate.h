@@ -18,6 +18,7 @@ public:
 
     // instances
     AdditionalAnnoucement currentSpecialAnnoucement;
+    QVector<AdditionalAnnoucement> specialAnnouncementQueue;
     Line currentLine;
     VehicleRun currentVehicleRun;
     Trip currentTrip;

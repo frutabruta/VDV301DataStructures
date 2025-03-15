@@ -1,5 +1,12 @@
 # VDV301DataStructures
 Library of data storage classes for use with VDV301
+- 20250315_1932
+    - VehicleState
+        - added QVector<AdditionalAnnoucement> specialAnnouncementQueue;
+    - AdditionalAnnoucement
+        - complete overgaul for version 2.3CZ1.0
+
+
 - 20250312_1902
     - stoppoint
         - all bool values default to false
