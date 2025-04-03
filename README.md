@@ -1,5 +1,8 @@
 # VDV301DataStructures
 Library of data storage classes for use with VDV301
+
+- 20250403_2141
+    - new class Vdv301CurrentDisplayContent
 - 20250315_1932
     - VehicleState
         - added QVector<AdditionalAnnoucement> specialAnnouncementQueue;
