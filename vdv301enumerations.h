@@ -51,13 +51,29 @@ public:
     };
 
 
+    enum VehicleModeEnumeration
+    {
+        VehicleModeUnknown,
+        VehicleModeAir,
+        VehicleModeBus,
+        VehicleModeCoach,
+        VehicleModeFerry,
+        VehicleModeMetro,
+        VehicleModeRail,
+        VehicleModeTram,
+        VehicleModeUnderGround
+    };
+
+
 
 
     static Vdv301Enumerations::LocationStateEnumeration LocationStateEnumerationFromQString(QString text);
     static Vdv301Enumerations::DoorOpenStateEnumeration DoorOpenStateEnumerationFromQString(QString text);
+    static Vdv301Enumerations::RouteDeviationEnumeration RouteDeviationEnumerationFromQString(QString input);
     static QString LocationStateEnumerationToQString(Vdv301Enumerations::LocationStateEnumeration input);
     static QString RouteDeviationEnumerationToQString(Vdv301Enumerations::RouteDeviationEnumeration input);
     static QString DoorOpenStateEnumerationToQString(Vdv301Enumerations::DoorOpenStateEnumeration input);
+
 
 };
 

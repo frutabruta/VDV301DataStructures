@@ -124,3 +124,22 @@ QString Vdv301Enumerations::RouteDeviationEnumerationToQString(Vdv301Enumeration
         break;
     }
 }
+
+
+Vdv301Enumerations::RouteDeviationEnumeration Vdv301Enumerations::RouteDeviationEnumerationFromQString(QString input)
+{
+    if(input=="onroute")
+    {
+        return RouteDeviationOnroute;
+    }
+    if(input=="offroute")
+    {
+        return RouteDeviationOffroute;
+    }
+    if(input=="unknown")
+    {
+        return RouteDeviationUnknown;
+    }
+
+    return RouteDeviationUnknown;
+}

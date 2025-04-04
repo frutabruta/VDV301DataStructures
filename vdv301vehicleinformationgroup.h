@@ -19,6 +19,8 @@ public:
     QString vehicleSubMode="regionalBus";
     QString vehicleMode="BusSubmode";
 
+    Vdv301Enumerations::VehicleModeEnumeration vehicleMode1_0=Vdv301Enumerations::VehicleModeUnknown;
+
     // name="SpeakerActive" type="IBIS-IP.boolean" minOccurs="0", Gives information, if the loud speaker is activated for a passenger announcement
     // name="StopInformationActive" type="IBIS-IP.boolean" minOccurs="0", Gives information, if the stopInformation inside the vehicle is in active or in passiv state (intentionally, e.g. due to "route left)
     Vdv301Enumerations::TripStateEnumeration tripState=Vdv301Enumerations::TripStateOnTrip;// name="TripState" type="TripStateEnumeration" minOccurs="0"

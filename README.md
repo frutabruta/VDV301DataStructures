@@ -1,6 +1,9 @@
 # VDV301DataStructures
 Library of data storage classes for use with VDV301
 
+- 20250404_1832
+    - added VehicleModeEnumeration
+    - new function Vdv301Enumerations::RouteDeviationEnumeration RouteDeviationEnumerationFromQString
 - 20250403_2141
     - new class Vdv301CurrentDisplayContent
 - 20250315_1932
