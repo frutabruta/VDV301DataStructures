@@ -36,6 +36,10 @@ public:
     QDateTime expectedDepartureTime; //Information, at which time the leaving vehicle will depart based on realtime information, type="IBIS-IP.dateTime" minOccurs="0"
     QDateTime scheduledDepartureTime; //Information, at which time the leaving vehicle is planned to depart, type="IBIS-IP.dateTime" minOccurs="0"
 
+    //TransportMode" type="VehicleStructure" minOccurs="0"
+    QString vehicleTypeRef="3";
+    Vdv301InternationalText vehicleStructureName=Vdv301InternationalText("","cs");
+
 
     int getMinutesToDeparture(QDateTime aktCas);
     QString expectedDepartureTimeQString();

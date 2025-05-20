@@ -1,6 +1,11 @@
 # VDV301DataStructures
 Library of data storage classes for use with VDV301
 
+- 20250520_1625
+    - Vdv301Connection
+        - new variables added comply with 1.0 
+            - vehicleTypeRef
+            - vehicleStructureName 
 - 20250404_1832
     - added VehicleModeEnumeration
     - new function Vdv301Enumerations::RouteDeviationEnumeration RouteDeviationEnumerationFromQString
