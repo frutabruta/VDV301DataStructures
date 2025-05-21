@@ -16,11 +16,19 @@ public:
 
     QDateTime arrivalTimestampPredicted;
     QDateTime arrivalTimestampScheduled;
-    QDateTime departureTimestampPredicted;
-    QDateTime departureTimestampScheduled;
+    QString arrivalTimestampMinutes="";
+
     bool delayIsAvailable=false;
     int delayMinutes=0;
     int delaySeconds=0;
+
+    QDateTime departureTimestampPredicted;
+    QDateTime departureTimestampScheduled;
+    QString departureTimestampMinutes="";
+
+    QString lastStopName="";
+    QString lastStopId="";
+
 
     QString routeShortName="";
     int routeType=0;
@@ -28,10 +36,16 @@ public:
     bool routeIsRegional=false;
     bool routeIsSubstituteTransport=false;
 
+    QString stopId="";
     QString stopPlatformCode="";
 
-    QString tripHeadsign="";
+
+    QString tripDirection="";
+    QString tripHeadsign="";    
+    QString tripId="";
+    QString tripShortName="";
     bool tripIsCanceled=false;
+    bool tripIsAirConditioned=false;
     bool tripIsWheelchairAccessible=false;
     bool tripIsAtStop=false;
     

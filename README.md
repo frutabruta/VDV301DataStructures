@@ -1,6 +1,19 @@
 # VDV301DataStructures
 Library of data storage classes for use with VDV301
 
+- 20250521_1619
+    - ConnectionGolemio
+        - added variables
+            - arrivalTimestampMinutes
+            - departureTimestampMinutes
+            - lastStopName
+            - lastStopId
+            - stopId
+            - tripDirection
+            - tripId
+            - tripShortName
+            - tripIsAirConditioned
+
 - 20250520_1625
     - Vdv301Connection
         - new variables added comply with 1.0 
@@ -16,7 +29,6 @@ Library of data storage classes for use with VDV301
         - added QVector<AdditionalAnnoucement> specialAnnouncementQueue;
     - AdditionalAnnoucement
         - complete overgaul for version 2.3CZ1.0
-
 
 - 20250312_1902
     - stoppoint
