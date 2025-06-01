@@ -1,6 +1,10 @@
 # VDV301DataStructures
 Library of data storage classes for use with VDV301
 
+## Changelog
+- 20250601_1842
+        - StopPoint
+                - added sx and sy S-JTSK variables
 - 20250521_1619
     - ConnectionGolemio
         - added variables

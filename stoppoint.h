@@ -47,8 +47,12 @@ public:
 
     QString platformName="";
 
-    double lng=0.0; //GPS souradnice
-    double lat=0.0; //GPS souradnice
+    double lng=0.0; //GNSS longitude WGS84
+    double lat=0.0; //GNSS latitude WGS84
+
+    double sx=0.0; //GNSS longitude S_JTSK
+    double sy=0.0; //GNSS latitude  S_JTSK
+
     int radius=0; //polomer vyhlaseni zastavky
 
     QVector<FareZone> fareZoneList;
