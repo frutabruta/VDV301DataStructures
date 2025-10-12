@@ -1,9 +1,11 @@
 #ifndef STOPPOINT_H
 #define STOPPOINT_H
 
-#include "farezone.h"
-#include <QMainWindow>
+//#include <QMainWindow>
 #include <QObject>
+#include <QPolygonF>
+
+#include "farezone.h"
 #include "connection.h"
 
 
@@ -52,6 +54,8 @@ public:
 
     double sx=0.0; //GNSS longitude S_JTSK
     double sy=0.0; //GNSS latitude  S_JTSK
+
+    QPolygonF polygonWgs84;
 
     int radius=0; //polomer vyhlaseni zastavky
 
