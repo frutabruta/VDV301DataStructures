@@ -18,7 +18,7 @@ void Trip::reset()
 
 bool Trip::operator==(const Trip &node) const
 {
-return idRopid==node.idRopid && line.c==node.line.c;
+    return id==node.id;
 }
 
 
