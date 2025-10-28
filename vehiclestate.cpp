@@ -22,7 +22,7 @@ int VehicleState::reset()
     doorState=Vdv301Enumerations::DoorOpenStateAllDoorsClosed;
     locationState=Vdv301Enumerations::LocationStateAtStop;
     exitSide=0;
-    vehicleNumber=1234;
+//    vehicleNumber=1234;
     isDoorOpen=false;
     isVehicleStopRequested=false;
     showFareZoneChange=false;

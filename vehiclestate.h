@@ -36,7 +36,7 @@ public:
     int currentStopIndex0;
     int currentTripIndex;
     int stopPointCount;
-    int vehicleNumber=1234;
+    int  vehicleNumber=1234;
     int isDoorOpen=0;
     int exitSide=0;
     bool showFareZoneChange=false;

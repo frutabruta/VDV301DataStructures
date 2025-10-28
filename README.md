@@ -2,6 +2,9 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20251028_1430
+  - VehicleState
+    - removed vehicleRef set from VehicleState::reset
 - 20251012_1223
   - StopPoint
     - added polygonWgs84
