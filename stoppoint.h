@@ -56,6 +56,7 @@ public:
     double sy=0.0; //GNSS latitude  S_JTSK
 
     QPolygonF polygonWgs84;
+    QPolygonF polygonWgs84_out;
 
     int radius=0; //polomer vyhlaseni zastavky
 

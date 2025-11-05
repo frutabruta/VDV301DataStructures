@@ -2,6 +2,9 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20251105_1621
+  - StopPoint
+    - added QPolygonF polygonWgs84_out;
 - 20251028_1912
   - Trip == operator fixed (now is based on s.id instead of s.c + l)
 - 20251028_1430
