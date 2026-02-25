@@ -66,7 +66,7 @@ public:
 
     QVector<QString> notesList; //list of notes displayed to driver
 
-
+    QTime arrivalToQTime();
     QTime departureToQTime();
 
     static QTime secondsToQtime(QString vstup);

@@ -2,6 +2,12 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260225_1753
+  - StopPoint
+    - added function StopPoint::arrivalToQTime
+  - VehicleState
+    - added secondsDelay
+
 - 20251105_1621
   - StopPoint
     - added QPolygonF polygonWgs84_out;

@@ -41,6 +41,7 @@ public:
     int exitSide=0;
     bool showFareZoneChange=false;
     QDate referenceDate;
+    int secondsDelay=0; //stores difference between real time and scheduled time
 
     bool isSpecialAnnoucementUsed=false;
 

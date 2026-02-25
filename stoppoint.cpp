@@ -20,6 +20,11 @@ QTime StopPoint::secondsToQtime(QString vstup)
     return QTime(hours,minutes);
 }
 
+QTime StopPoint::arrivalToQTime()
+{
+    return secondsToQtime(ArrivalTime);
+}
+
 QTime StopPoint::departureToQTime()
 {
     return secondsToQtime(DepartureTime);
