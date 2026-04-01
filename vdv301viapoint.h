@@ -7,8 +7,11 @@ class Vdv301ViaPoint
 {
 public:
     Vdv301ViaPoint();
-    QString viaPointRef;
+    QString viaPointRef=""; //type="IBIS-IP.NMTOKEN"
+    QString PlaceRef=""; // type="IBIS-IP.NMTOKEN" minOccurs="0" unused
     QVector<Vdv301InternationalText> placeNameList;
+    QVector<Vdv301InternationalText> placeShortNameList; //unused
+    int viaPointDisplayPriority=1; //unused type="IBIS-IP.int" minOccurs="0"
 
 };
 

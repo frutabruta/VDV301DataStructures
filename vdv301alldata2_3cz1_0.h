@@ -8,6 +8,7 @@ class Vdv301AllData2_3CZ1_0 : public Vdv301AllData
 public:
     Vdv301AllData2_3CZ1_0();
     QVector<Vdv301Trip2_3CZ1_0> tripInformationList;
+    QVector<Vdv301DisplayContent2_3CZ1_0> globalDisplayContentList;
     bool isVehicleOnFinalStop();
 };
 

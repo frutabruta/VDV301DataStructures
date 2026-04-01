@@ -2,6 +2,20 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260401_1509
+  - StopPoint::secondsToQtime
+    - added option to return empty time
+  - Vdv301AllData2_3CZ1_0
+    - added QVector<Vdv301DisplayContent2_3CZ1_0> globalDisplayContentList;
+  - Vdv301StopPoint2_3CZ1_0
+    - usage of Vdv301DisplayContent2_3CZ1_0
+  - Vdv301ViaPoint
+    - added all elements from 2.3 XSD
+  - new class Vdv301DisplayContent2_3CZ1_0
+    - support for departure time at viaPoints
+  - new class Vdv301ViaPoint2_3CZ1_0
+    - added departure, arrival, etc.
+
 - 20260225_1753
   - StopPoint
     - added function StopPoint::arrivalToQTime

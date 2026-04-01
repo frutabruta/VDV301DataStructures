@@ -13,11 +13,16 @@ StopPoint::StopPoint()
 */
 QTime StopPoint::secondsToQtime(QString vstup)
 {
-    int seconds=vstup.toInt();
-    seconds=seconds%86400; //fix for connection through midnight
-    int hours=seconds/3600;
-    int minutes=(seconds%3600)/60;
-    return QTime(hours,minutes);
+    QTime result;
+    if(!vstup.isEmpty())
+    {
+        int seconds=vstup.toInt();
+        seconds=seconds%86400; //fix for connection through midnight
+        int hours=seconds/3600;
+        int minutes=(seconds%3600)/60;
+        result = QTime(hours,minutes);
+    }
+    return result;
 }
 
 QTime StopPoint::arrivalToQTime()
