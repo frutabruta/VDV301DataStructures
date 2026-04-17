@@ -2,6 +2,10 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260417_1858
+  - Vdv301DisplayContent2_3CZ1_0
+    - added QVector<Vdv301ViaPoint2_3CZ1_0> viaPointList
+    
 - 20260401_1509
   - StopPoint::secondsToQtime
     - added option to return empty time
