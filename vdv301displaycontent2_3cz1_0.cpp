@@ -15,3 +15,12 @@ Vdv301DisplayContent Vdv301DisplayContent2_3CZ1_0::toVdv301DisplayContent()
     output.priority=this->priority;
 }*/
 
+QVector<Vdv301DisplayContent> Vdv301DisplayContent2_3CZ1_0::vdv301DisplayContent2_3CZ1_0ListToVdv301DisplayContentList(QVector<Vdv301DisplayContent2_3CZ1_0> input)
+{
+    QVector<Vdv301DisplayContent> output;
+    foreach(Vdv301DisplayContent2_3CZ1_0 value, input)
+    {
+        output<<value;
+    }
+    return output;
+}
