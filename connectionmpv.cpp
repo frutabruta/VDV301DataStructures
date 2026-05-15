@@ -1,5 +1,6 @@
 #include "connectionmpv.h"
 
+Q_LOGGING_CATEGORY(ConnectionMPVLog, "ConnectionMPV")
 
 ConnectionMPV::ConnectionMPV()
 {
@@ -114,7 +115,7 @@ QString ConnectionMPV::qDateTimeToString(QDateTime vstup)
 
 void ConnectionMPV::ddDoVehicleMode(int dd, QString &mainMode, QString &subMode, Line &linka)
 {
-    qDebug()<<"PrestupMPV::ddDoVehicleMode "<<dd;
+    qCDebug(ConnectionMPVLog)<<Q_FUNC_INFO<<dd;
 
     /*
     bool isDiversion=false;
@@ -189,7 +190,7 @@ void ConnectionMPV::ddDoVehicleMode(int dd, QString &mainMode, QString &subMode,
         mainMode="BusSubmode";
         subMode="localBus";
         linka.isSpecial=true;
-        qDebug()<<"linka je specialni";
+        qCDebug(ConnectionMPVLog)<<"linka je specialni";
 
 
         break;
@@ -255,7 +256,7 @@ void ConnectionMPV::ddDoVehicleMode(int dd, QString &mainMode, QString &subMode,
 
 void ConnectionMPV::ddDoVdv301VehicleMode(int dd, QString &mainMode, QString &subMode)
 {
-    qDebug()<<"PrestupMPV::ddDoVehicleMode "<<dd;
+    qCDebug(ConnectionMPVLog)<<"PrestupMPV::ddDoVehicleMode "<<dd;
 
     /*
     bool isDiversion=false;
@@ -330,7 +331,7 @@ void ConnectionMPV::ddDoVdv301VehicleMode(int dd, QString &mainMode, QString &su
         mainMode="BusSubmode";
         subMode="localBus";
      //   line.isSpecial=true;
-        qDebug()<<"linka je specialni";
+        qCDebug(ConnectionMPVLog)<<"linka je specialni";
 
 
         break;
@@ -414,21 +415,21 @@ QString ConnectionMPV::dumpConnection()
 
 QVector<ConnectionMPV> ConnectionMPV::orderConnectionsByExpectedDeparture(QVector<ConnectionMPV> input)
 {
-    qDebug()<<Q_FUNC_INFO;
+    qCDebug(ConnectionMPVLog)<<Q_FUNC_INFO;
 
 
     foreach(ConnectionMPV aktPrestup,input)
     {
-        qDebug()<<aktPrestup.dumpConnection();
+        qCDebug(ConnectionMPVLog)<<aktPrestup.dumpConnection();
     }
 
-    qDebug()<<"ordered:";
+    qCDebug(ConnectionMPVLog)<<"ordered:";
 
    std::sort(input.begin(),input.end(),ConnectionMPV::compareConnectionMPV );
 
    foreach(ConnectionMPV currentConnectionMPV,input)
    {
-       qDebug()<<currentConnectionMPV.dumpConnection();
+       qCDebug(ConnectionMPVLog)<<currentConnectionMPV.dumpConnection();
    }
 
 

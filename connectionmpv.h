@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QObject>
 #include <QDebug>
+#include <QLoggingCategory>
 #include "vdv301connection.h"
 #include "line.h"
 #include <QDateTime>

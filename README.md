@@ -2,6 +2,9 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260515_1604
+  - ConnectionMPV
+    - implemented QLoggingCategory
 - 20260418_0121
   - new class Vdv301CurrentDisplayContent2_3CZ1_0
   - new function Vdv301DisplayContent2_3CZ1_0::vdv301DisplayContent2_3CZ1_0ListToVdv301DisplayContentList
