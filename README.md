@@ -2,6 +2,8 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260530_2003
+  - added VehicleState::getCurrentStopPointDestination
 - 20260515_1604
   - ConnectionMPV
     - implemented QLoggingCategory

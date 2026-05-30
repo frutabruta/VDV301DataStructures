@@ -50,8 +50,10 @@ public:
     int reset();
     int countCurrentTripStops();
     Trip getCurrentTrip();
+    StopPointDestination getCurrentStopPointDestination(bool &isNull);
 
     //others
+
 
 
 signals:
