@@ -25,14 +25,36 @@ QTime StopPoint::secondsToQtime(QString vstup)
     return result;
 }
 
+QDateTime StopPoint::secondsToQDateTime(QString secondsCountString, QDate baseDate)
+{
+    QDateTime result;
+    if(!secondsCountString.isEmpty())
+    {
+        result.setDate(baseDate);
+        result=result.addSecs(secondsCountString.toInt());
+    }
+    return result;
+}
+
+
 QTime StopPoint::arrivalToQTime()
 {
     return secondsToQtime(ArrivalTime);
 }
 
+QDateTime StopPoint::arrivalToQDateTime()
+{
+    return secondsToQDateTime(ArrivalTime,QDate::currentDate());
+}
+
 QTime StopPoint::departureToQTime()
 {
     return secondsToQtime(DepartureTime);
+}
+
+QDateTime StopPoint::departureToQDateTime()
+{
+    return secondsToQDateTime(DepartureTime,QDate::currentDate());
 }
 /*!
  * \brief StopPoint::ref

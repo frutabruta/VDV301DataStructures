@@ -68,8 +68,11 @@ public:
 
     QTime arrivalToQTime();
     QTime departureToQTime();
+    QDateTime arrivalToQDateTime();
+    QDateTime departureToQDateTime();
 
     static QTime secondsToQtime(QString vstup);
+    static QDateTime secondsToQDateTime(QString secondsCountString, QDate baseDate);
     QString ref();
 };
 
