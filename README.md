@@ -2,6 +2,10 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260728_1846
+  - new class StopNote
+  - new overloaded functions AdditionalAnnoucement::formatText
+  
 - 20260707_1540 
   - new functions to fix trips over midnight
     - StopPoint::secondsToQDateTime
