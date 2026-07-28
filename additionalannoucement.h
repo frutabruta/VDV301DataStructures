@@ -2,6 +2,8 @@
 #define ADDITIONALANNOUCEMENT_H
 
 #include <QObject>
+#include <QColor>
+
 class AdditionalAnnoucement
 {
 public:
@@ -13,7 +15,10 @@ public:
     QString changeFrom=""; //used for lineChange and fareZoneChange values
     QString changeTo=""; //used for lineChange and fareZoneChange values
     QVector<QString> mp3;
-    int duration=10000; //duration in seconds
+    int duration=10000; //duration in miliseconds
+    static QString formatText(QString &text, QColor color, int fontSize);
+    static QString formatText(QString &text, int fontSize);
+    static QString formatText(QString &text, QColor color);
 };
 
 #endif // ADDITIONALANNOUCEMENT_H

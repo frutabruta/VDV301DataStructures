@@ -7,6 +7,7 @@
 
 #include "farezone.h"
 #include "connection.h"
+#include "stopnote.h"
 
 
 class StopPoint
@@ -65,6 +66,7 @@ public:
     QVector<Connection> connectionList;
 
     QVector<QString> notesList; //list of notes displayed to driver
+    QVector<StopNote> stopNoteList;
 
     QTime arrivalToQTime();
     QTime departureToQTime();
