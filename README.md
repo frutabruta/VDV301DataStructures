@@ -2,6 +2,10 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260804_1619
+  - StopPointDestination
+    - removed unused includes
+
 - 20260728_1846
   - new class StopNote
   - new overloaded functions AdditionalAnnoucement::formatText
