@@ -19,10 +19,10 @@ int VehicleState::reset()
     currentStopIndex0=0;
     currentLine.lineNumber="";
     currentVehicleRun.reset();
-    doorState="AllDoorsClosed";
-    locationState="AtStop";
+    doorState=Vdv301Enumerations::DoorOpenStateAllDoorsClosed;
+    locationState=Vdv301Enumerations::LocationStateAtStop;
     exitSide=0;
-    vehicleNumber=1234;
+//    vehicleNumber=1234;
     isDoorOpen=false;
     isVehicleStopRequested=false;
     showFareZoneChange=false;
@@ -50,6 +50,30 @@ Trip VehicleState::getCurrentTrip()
     }
 
     return this->currentVehicleRun.tripList.at(this->currentTripIndex);
+}
+
+StopPointDestination VehicleState::getCurrentStopPointDestination(bool &isNull)
+{
+    StopPointDestination stopPointDestination;
+    Trip currentTrip=getCurrentTrip();
+    if(currentTrip.globalStopPointDestinationList.isEmpty())
+    {
+        isNull=true;
+    }
+    else
+    {
+        if(currentStopIndex0<0)
+        {
+            isNull=true;
+        }
+        if(currentStopIndex0<currentTrip.globalStopPointDestinationList.count())
+        {
+            stopPointDestination=currentTrip.globalStopPointDestinationList.at(currentStopIndex0);
+            isNull=false;
+        }
+    }
+
+    return stopPointDestination;
 }
 
 

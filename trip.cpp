@@ -18,6 +18,15 @@ void Trip::reset()
 
 bool Trip::operator==(const Trip &node) const
 {
-return idRopid==node.idRopid && line.c==node.line.c;
+    return id==node.id;
 }
 
+
+QString Trip::ref()
+{
+    if(idRopid==0)
+    {
+        return "noRef";
+    }
+    return QString::number(idRopid);
+}

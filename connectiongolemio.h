@@ -3,6 +3,7 @@
 #include <QDateTime>
 #include <QDebug>
 
+#include "vdv301connection.h"
 #include "connection.h"
 
 //this class stores connections obtained from public Golemio API: https://api.golemio.cz/v2/pid/docs/openapi/
@@ -15,11 +16,19 @@ public:
 
     QDateTime arrivalTimestampPredicted;
     QDateTime arrivalTimestampScheduled;
-    QDateTime departureTimestampPredicted;
-    QDateTime departureTimestampScheduled;
+    QString arrivalTimestampMinutes="";
+
     bool delayIsAvailable=false;
     int delayMinutes=0;
     int delaySeconds=0;
+
+    QDateTime departureTimestampPredicted;
+    QDateTime departureTimestampScheduled;
+    QString departureTimestampMinutes="";
+
+    QString lastStopName="";
+    QString lastStopId="";
+
 
     QString routeShortName="";
     int routeType=0;
@@ -27,16 +36,23 @@ public:
     bool routeIsRegional=false;
     bool routeIsSubstituteTransport=false;
 
+    QString stopId="";
     QString stopPlatformCode="";
 
-    QString tripHeadsign="";
+
+    QString tripDirection="";
+    QString tripHeadsign="";    
+    QString tripId="";
+    QString tripShortName="";
     bool tripIsCanceled=false;
+    bool tripIsAirConditioned=false;
     bool tripIsWheelchairAccessible=false;
     bool tripIsAtStop=false;
-
-
-
+    
+    
+    
     Connection toConnection();
+    Vdv301Connection toVdv301Connection();
 };
 
 #endif // CONNECTIONGOLEMIO_H

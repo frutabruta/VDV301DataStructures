@@ -21,6 +21,10 @@ DisplayContentClass Vdv301DisplayContent::qStringToDisplayContentClass(QString i
     {
         return DisplayContentRear;
     }
+    else if(input=="Interior")
+    {
+        return DisplayContentInterior;
+    }
     else if(input=="Lcd")
     {
         return DisplayContentLcd;
@@ -29,5 +33,30 @@ DisplayContentClass Vdv301DisplayContent::qStringToDisplayContentClass(QString i
     {
         return DisplayContentUndefined;
     }
+
+}
+
+QString Vdv301DisplayContent::displayContentClassEnumerationToQString(DisplayContentClass displayContentClass)
+{
+    switch(displayContentClass)
+    {
+
+    case DisplayContentUndefined:
+        return "";
+    case DisplayContentFront:
+        return "Front";
+    case DisplayContentSide:
+        return "Side";
+    case DisplayContentRear:
+        return "Rear";
+    case DisplayContentInterior:
+        return "Interior";
+    case DisplayContentLcd:
+        return "Lcd";
+    default:
+        return "";
+        break;
+    }
+
 
 }

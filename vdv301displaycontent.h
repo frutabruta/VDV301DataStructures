@@ -13,7 +13,7 @@ enum DisplayContentClass
     DisplayContentFront,
     DisplayContentSide,
     DisplayContentRear,
-    DisplayContentInner,
+    DisplayContentInterior,
     DisplayContentLcd
 };
 
@@ -38,6 +38,7 @@ public:
 
 
     static DisplayContentClass qStringToDisplayContentClass(QString input);
+    static QString displayContentClassEnumerationToQString(DisplayContentClass displayContentClass);
 };
 
 #endif // VDV301DISPLAYCONTENT_H

@@ -1,10 +1,13 @@
 #ifndef STOPPOINT_H
 #define STOPPOINT_H
 
-#include "farezone.h"
-#include <QMainWindow>
+//#include <QMainWindow>
 #include <QObject>
+#include <QPolygonF>
+
+#include "farezone.h"
 #include "connection.h"
+#include "stopnote.h"
 
 
 class StopPoint
@@ -29,24 +32,33 @@ public:
     QString NameLcd="";
     QString NameRear="";
     QString NameInner="";
-    bool transferTrain=0;
-    bool transferMetroA=0;
-    bool transferMetroB=0;
-    bool transferMetroC=0;
-    bool transferMetroD=0;
-    bool transferAirplane=0;
-    bool transferFerry=0;
-    bool onRequest=0;
+    bool transferTrain=false;
+    bool transferMetroA=false;
+    bool transferMetroB=false;
+    bool transferMetroC=false;
+    bool transferMetroD=false;
+    bool transferAirplane=false;
+    bool transferFerry=false;
+    bool onRequest=false;
+    bool neozn=false; //ignore on request announcement
+    bool zast=false; //enforce stop driver announcement in stop on request stops
     bool zsol=0; //prujezdna konecna, change of destination
     QString additionalTextMessage="";
 
 
-    int isViapoint=0;
+    bool isViapoint=false;
 
     QString platformName="";
 
-    double lng=0.0; //GPS souradnice
-    double lat=0.0; //GPS souradnice
+    double lng=0.0; //GNSS longitude WGS84
+    double lat=0.0; //GNSS latitude WGS84
+
+    double sx=0.0; //GNSS longitude S_JTSK
+    double sy=0.0; //GNSS latitude  S_JTSK
+
+    QPolygonF polygonWgs84;
+    QPolygonF polygonWgs84_out;
+
     int radius=0; //polomer vyhlaseni zastavky
 
     QVector<FareZone> fareZoneList;
@@ -54,11 +66,16 @@ public:
     QVector<Connection> connectionList;
 
     QVector<QString> notesList; //list of notes displayed to driver
+    QVector<StopNote> stopNoteList;
 
-
+    QTime arrivalToQTime();
     QTime departureToQTime();
+    QDateTime arrivalToQDateTime();
+    QDateTime departureToQDateTime();
 
     static QTime secondsToQtime(QString vstup);
+    static QDateTime secondsToQDateTime(QString secondsCountString, QDate baseDate);
+    QString ref();
 };
 
 

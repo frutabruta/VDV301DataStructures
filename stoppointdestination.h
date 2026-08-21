@@ -2,8 +2,6 @@
 #define STOPPOINTDESTINATION_H
 #include "stoppoint.h"
 #include "line.h"
-//#include "VDV301struktury/spoj.h"
-
 
 class StopPointDestination
 {

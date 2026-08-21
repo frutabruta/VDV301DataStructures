@@ -1,0 +1,145 @@
+#include "vdv301enumerations.h"
+
+
+
+
+
+
+Vdv301Enumerations::Vdv301Enumerations() {}
+
+
+Vdv301Enumerations::LocationStateEnumeration Vdv301Enumerations::LocationStateEnumerationFromQString(QString text)
+{
+    if(text=="AtStop")
+    {
+        return LocationStateAtStop;
+    }
+    else if(text=="AfterStop")
+    {
+        return LocationStateAfterStop;
+    }
+    else if(text=="BeforeStop")
+    {
+        return LocationStateBeforeStop;
+    }
+    else if(text=="BetweenStop")
+    {
+        return LocationStateBetweenStop;
+    }
+    return LocationStateError;
+
+}
+
+Vdv301Enumerations::DoorOpenStateEnumeration Vdv301Enumerations::DoorOpenStateEnumerationFromQString(QString text)
+{
+    if(text=="DoorsOpen")
+    {
+        return DoorOpenStateDoorsOpen;
+    }
+    else if(text=="SingleDoorClosed")
+    {
+        return DoorOpenStateSingleDoorClosed;
+    }
+    else if(text=="SingleDoorOpen")
+    {
+        return DoorOpenStateSingleDoorOpen;
+    }
+    else if(text=="AllDoorsClosed")
+    {
+        return DoorOpenStateAllDoorsClosed;
+    }
+
+    return DoorOpenStateAllDoorsClosed; // create a default state!!!
+
+}
+
+
+
+
+QString Vdv301Enumerations::LocationStateEnumerationToQString(Vdv301Enumerations::LocationStateEnumeration input)
+{
+    switch(input)
+    {
+    case LocationStateAtStop:
+        return "AtStop";
+        break;
+    case LocationStateAfterStop:
+        return "AfterStop";
+        break;
+    case LocationStateBeforeStop:
+        return "BeforeStop";
+        break;
+    case LocationStateBetweenStop:
+        return "BetweenStop";
+        break;
+    case LocationStateError:
+        return "Error";
+        break;
+    default:
+        return "";
+        break;
+
+    }
+    return "";
+}
+
+QString Vdv301Enumerations::DoorOpenStateEnumerationToQString(Vdv301Enumerations::DoorOpenStateEnumeration input)
+{
+    switch(input)
+    {
+    case DoorOpenStateDoorsOpen:
+        return "DoorsOpen";
+        break;
+    case DoorOpenStateSingleDoorClosed:
+        return "SingleDoorClosed";
+        break;
+    case DoorOpenStateSingleDoorOpen:
+        return "SingleDoorOpen";
+        break;
+    case DoorOpenStateAllDoorsClosed:
+        return "AllDoorsClosed";
+        break;
+    default:
+        return "";
+        break;
+    }
+}
+
+
+QString Vdv301Enumerations::RouteDeviationEnumerationToQString(Vdv301Enumerations::RouteDeviationEnumeration input)
+{
+    switch(input)
+    {
+    case RouteDeviationOnroute:
+        return "onroute";
+        break;
+    case RouteDeviationOffroute:
+        return "offroute";
+        break;
+    case RouteDeviationUnknown:
+        return "unknown";
+        break;
+    default:
+        return "unknown";
+        break;
+    }
+}
+
+
+Vdv301Enumerations::RouteDeviationEnumeration Vdv301Enumerations::RouteDeviationEnumerationFromQString(QString input)
+{
+    if(input=="onroute")
+    {
+        return RouteDeviationOnroute;
+    }
+    if(input=="offroute")
+    {
+        return RouteDeviationOffroute;
+    }
+    if(input=="unknown")
+    {
+        return RouteDeviationUnknown;
+    }
+
+    return RouteDeviationUnknown;
+}

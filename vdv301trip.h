@@ -3,7 +3,9 @@
 
 #include <QObject>
 #include "vdv301stoppoint.h"
-#include"vdv301internationaltext.h"
+#include "vdv301internationaltext.h"
+#include "vdv301enumerations.h"
+#include "vdv301additionalannouncement.h"
 
 //defined in https://github.com/VDVde/VDV301/blob/master/IBIS-IP_common_V2.3.xsd
 
@@ -13,7 +15,7 @@ public:
     Vdv301Trip();
     QString tripRef=""; //type="IBIS-IP.NMTOKEN
     QVector<Vdv301StopPoint> stopPointList; //  type="StopSequenceStructure" ; List of StopPoints; with additional information
-    QString locationState=""; //  type="LocationStateEnumeration", minOccurs="0", Information of the location state
+    Vdv301Enumerations::LocationStateEnumeration locationState=Vdv301Enumerations::LocationStateAtStop; //  type="LocationStateEnumeration", minOccurs="0", Information of the location state
     /*
 <xs:enumeration value="AfterStop"/>
             <xs:enumeration value="AtStop"/>
@@ -22,8 +24,19 @@ public:
 */
 
     int timetableDelay=0; //type="IBIS-IP.int" minOccurs="0",  Delay in seconds. Early times are shown as negative values.
-    Vdv301InternationalText additionalTextMessage; // type="InternationalTextType" minOccurs="0",
-    //AdditionalTextMessage 1-9 not implemented
+    QVector<Vdv301InternationalText> additionalTextMessageList; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage1List; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage2List; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage3List; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage4List; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage5List; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage6List; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage7List; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage8List; // type="InternationalTextType" minOccurs="0",
+    QVector<Vdv301InternationalText> additionalTextMessage9List; // type="InternationalTextType" minOccurs="0",
+    
+    QVector<Vdv301AdditionalAnnouncement> additionalAnnouncementList; //  type="AdditionalAnnouncementStructure" minOccurs="0" maxOccurs="unbounded" ot StopPointAnnouncements; additional announcements; e.g. of the operator or dispatcher
+
     //RouteDirection not implemented
     QString runNumber="";// type="IBIS-IP.int" minOccurs="0", The run number (Kurs-Nummer) the trip is operated
     //PatternNumber not implemented

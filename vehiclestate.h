@@ -7,6 +7,7 @@
 #include "line.h"
 #include "vehiclerun.h"
 #include "additionalannoucement.h"
+#include "vdv301enumerations.h"
 
 class VehicleState
 {
@@ -17,14 +18,16 @@ public:
 
     // instances
     AdditionalAnnoucement currentSpecialAnnoucement;
+    QVector<AdditionalAnnoucement> specialAnnouncementQueue;
     Line currentLine;
     VehicleRun currentVehicleRun;
     Trip currentTrip;
 
     //variables
-    QString doorState="AllDoorsClosed";
-    QString locationState="AtStop";
-    QString routeDeviation="onroute";
+    Vdv301Enumerations::DoorOpenStateEnumeration doorState=Vdv301Enumerations::DoorOpenStateAllDoorsClosed;
+    //  QString locationState="AtStop";
+    Vdv301Enumerations::LocationStateEnumeration locationState=Vdv301Enumerations::LocationStateAtStop;
+    Vdv301Enumerations::RouteDeviationEnumeration routeDeviation=Vdv301Enumerations::RouteDeviationOnroute;
     QString vehicleSubMode="regionalBus";
     QString vehicleMode="BusSubmode";
     QString razziaState="norazzia";
@@ -33,11 +36,12 @@ public:
     int currentStopIndex0;
     int currentTripIndex;
     int stopPointCount;
-    int vehicleNumber=1234;
+    int  vehicleNumber=1234;
     int isDoorOpen=0;
     int exitSide=0;
     bool showFareZoneChange=false;
     QDate referenceDate;
+    int secondsDelay=0; //stores difference between real time and scheduled time
 
     bool isSpecialAnnoucementUsed=false;
 
@@ -46,8 +50,10 @@ public:
     int reset();
     int countCurrentTripStops();
     Trip getCurrentTrip();
+    StopPointDestination getCurrentStopPointDestination(bool &isNull);
 
     //others
+
 
 
 signals:
