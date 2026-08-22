@@ -1,12 +1,29 @@
 #include "vdv301enumerations.h"
 
-
-
-
-
-
 Vdv301Enumerations::Vdv301Enumerations() {}
 
+
+Vdv301Enumerations::DoorOpenStateEnumeration Vdv301Enumerations::DoorOpenStateEnumerationFromQString(QString text)
+{
+    if(text=="DoorsOpen")
+    {
+        return DoorOpenStateDoorsOpen;
+    }
+    else if(text=="SingleDoorClosed")
+    {
+        return DoorOpenStateSingleDoorClosed;
+    }
+    else if(text=="SingleDoorOpen")
+    {
+        return DoorOpenStateSingleDoorOpen;
+    }
+    else if(text=="AllDoorsClosed")
+    {
+        return DoorOpenStateAllDoorsClosed;
+    }
+
+    return DoorOpenStateAllDoorsClosed; // create a default state!!!
+}
 
 Vdv301Enumerations::LocationStateEnumeration Vdv301Enumerations::LocationStateEnumerationFromQString(QString text)
 {
@@ -30,30 +47,53 @@ Vdv301Enumerations::LocationStateEnumeration Vdv301Enumerations::LocationStateEn
 
 }
 
-Vdv301Enumerations::DoorOpenStateEnumeration Vdv301Enumerations::DoorOpenStateEnumerationFromQString(QString text)
+Vdv301Enumerations::RemoteControlMessageTypeEnumeration Vdv301Enumerations::RemoteControlMessageTypeEnumerationFromQString(QString input)
 {
-    if(text=="DoorsOpen")
+    if(input=="Ok")
     {
-        return DoorOpenStateDoorsOpen;
+        return RemoteControlOk;
     }
-    else if(text=="SingleDoorClosed")
+    else if(input=="Error")
     {
-        return DoorOpenStateSingleDoorClosed;
+        return RemoteControlError;
     }
-    else if(text=="SingleDoorOpen")
+    else if(input=="DestinationRequest")
     {
-        return DoorOpenStateSingleDoorOpen;
+        return RemoteControlDestinationRequest;
     }
-    else if(text=="AllDoorsClosed")
+    else if(input=="GetOnRequest")
     {
-        return DoorOpenStateAllDoorsClosed;
+        return RemoteControlGetOnRequest;
+    }
+    else if(input=="StopRazzia")
+    {
+        return RemoteControlStartRazzia;
+    }
+    else if(input=="StartRazzia")
+    {
+        return RemoteControlStopRazzia;
     }
 
-    return DoorOpenStateAllDoorsClosed; // create a default state!!!
-
+    return RemoteControlError;
 }
 
+Vdv301Enumerations::RouteDeviationEnumeration Vdv301Enumerations::RouteDeviationEnumerationFromQString(QString input)
+{
+    if(input=="onroute")
+    {
+        return RouteDeviationOnroute;
+    }
+    if(input=="offroute")
+    {
+        return RouteDeviationOffroute;
+    }
+    if(input=="unknown")
+    {
+        return RouteDeviationUnknown;
+    }
 
+    return RouteDeviationUnknown;
+}
 
 
 QString Vdv301Enumerations::LocationStateEnumerationToQString(Vdv301Enumerations::LocationStateEnumeration input)
@@ -126,20 +166,28 @@ QString Vdv301Enumerations::RouteDeviationEnumerationToQString(Vdv301Enumeration
 }
 
 
-Vdv301Enumerations::RouteDeviationEnumeration Vdv301Enumerations::RouteDeviationEnumerationFromQString(QString input)
+QString Vdv301Enumerations::RemoteControlMessageTypeToQString(Vdv301Enumerations::RemoteControlMessageTypeEnumeration input)
 {
-    if(input=="onroute")
+    switch (input)
     {
-        return RouteDeviationOnroute;
+    case RemoteControlOk:
+        return "Ok";
+        break;
+    case RemoteControlError:
+        return "Error";
+        break;
+    case RemoteControlDestinationRequest:
+        return "DestinationRequest";
+        break;
+    case RemoteControlGetOnRequest:
+        return "GetOnRequest";
+        break;
+    case RemoteControlStartRazzia:
+        return "StartRazzia";
+        break;
+    case RemoteControlStopRazzia:
+        return "StopRazzia";
+        break;
     }
-    if(input=="offroute")
-    {
-        return RouteDeviationOffroute;
-    }
-    if(input=="unknown")
-    {
-        return RouteDeviationUnknown;
-    }
-
-    return RouteDeviationUnknown;
+    return "Error";
 }

@@ -2,6 +2,9 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260822_2113
+  - new Vdv301Enumerations::RemoteControlMessageTypeEnumeration
+  
 - 20260804_1619
   - StopPointDestination
     - removed unused includes
