@@ -67,15 +67,30 @@ Vdv301Enumerations::RemoteControlMessageTypeEnumeration Vdv301Enumerations::Remo
     }
     else if(input=="StopRazzia")
     {
-        return RemoteControlStartRazzia;
+        return RemoteControlStopRazzia;
     }
     else if(input=="StartRazzia")
     {
-        return RemoteControlStopRazzia;
+        return RemoteControlStartRazzia;
     }
 
     return RemoteControlError;
 }
+
+Vdv301Enumerations::TicketRazziaInformationEnumeration Vdv301Enumerations::TicketRazziaInformationEnumerationFromQString(QString input)
+{
+    if(input=="razzia")
+    {
+        return TicketRazziaRazzia;
+    }
+    if(input=="norazzia")
+    {
+        return TicketRazziaNoRazzia;
+    }
+
+    return TicketRazziaNoRazzia;
+}
+
 
 Vdv301Enumerations::RouteDeviationEnumeration Vdv301Enumerations::RouteDeviationEnumerationFromQString(QString input)
 {
@@ -191,3 +206,18 @@ QString Vdv301Enumerations::RemoteControlMessageTypeToQString(Vdv301Enumerations
     }
     return "Error";
 }
+
+QString Vdv301Enumerations::TicketRazziaInformationEnumerationToQString(Vdv301Enumerations::TicketRazziaInformationEnumeration input)
+{
+    switch (input)
+    {
+    case TicketRazziaRazzia:
+        return "razzia";
+        break;
+    case TicketRazziaNoRazzia:
+        return "norazzia";
+        break;
+    }
+    return "norazzia";
+}
+

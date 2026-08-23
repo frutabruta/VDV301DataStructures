@@ -30,7 +30,7 @@ public:
     Vdv301Enumerations::RouteDeviationEnumeration routeDeviation=Vdv301Enumerations::RouteDeviationOnroute;
     QString vehicleSubMode="regionalBus";
     QString vehicleMode="BusSubmode";
-    QString razziaState="norazzia";
+    Vdv301Enumerations::TicketRazziaInformationEnumeration razziaState=Vdv301Enumerations::TicketRazziaNoRazzia;
     bool isVehicleStopRequested=false;
     bool showConnections=false;
     int currentStopIndex0;

@@ -2,6 +2,11 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260823_2216
+  - Vdv301Enumerations::RemoteControlMessageTypeEnumeration fix Start/Stop swap
+  - added TicketRazzia functions
+  - VehicleState::razziaState changed from QString to Vdv301Enumerations::TicketRazziaInformationEnumeration
+  
 - 20260822_2113
   - new Vdv301Enumerations::RemoteControlMessageTypeEnumeration
   

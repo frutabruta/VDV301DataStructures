@@ -40,6 +40,13 @@ public:
         RouteDeviationUnknown
     };
 
+    enum TicketRazziaInformationEnumeration
+    {
+        TicketRazziaRazzia,
+        TicketRazziaNoRazzia
+    };
+
+
     enum TripStateEnumeration
     {
         TripStateEmptyRun,
@@ -78,11 +85,14 @@ public:
     static Vdv301Enumerations::DoorOpenStateEnumeration DoorOpenStateEnumerationFromQString(QString text);
     static Vdv301Enumerations::RemoteControlMessageTypeEnumeration RemoteControlMessageTypeEnumerationFromQString(QString input);
     static Vdv301Enumerations::RouteDeviationEnumeration RouteDeviationEnumerationFromQString(QString input);
+    static Vdv301Enumerations::TicketRazziaInformationEnumeration TicketRazziaInformationEnumerationFromQString(QString input);
 
     static QString DoorOpenStateEnumerationToQString(Vdv301Enumerations::DoorOpenStateEnumeration input);
     static QString LocationStateEnumerationToQString(Vdv301Enumerations::LocationStateEnumeration input);
     static QString RemoteControlMessageTypeToQString(Vdv301Enumerations::RemoteControlMessageTypeEnumeration input);
     static QString RouteDeviationEnumerationToQString(Vdv301Enumerations::RouteDeviationEnumeration input);
- };
+    static QString TicketRazziaInformationEnumerationToQString(Vdv301Enumerations::TicketRazziaInformationEnumeration input);
+
+};
 
 #endif // VDV301ENUMERATIONS_H
