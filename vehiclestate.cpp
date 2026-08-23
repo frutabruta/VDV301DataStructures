@@ -5,14 +5,12 @@ VehicleState::VehicleState()
 {
     qDebug()<<Q_FUNC_INFO;
     reset();
-
 }
 
 
 int VehicleState::reset()
 {
     qDebug()<<Q_FUNC_INFO;
-
 
     currentTripIndex=0;   
     currentTrip.reset();
@@ -22,13 +20,13 @@ int VehicleState::reset()
     doorState=Vdv301Enumerations::DoorOpenStateAllDoorsClosed;
     locationState=Vdv301Enumerations::LocationStateAtStop;
     exitSide=0;
-//    vehicleNumber=1234;
+    // vehicleNumber=1234;
     isDoorOpen=false;
     isVehicleStopRequested=false;
     showFareZoneChange=false;
     stopPointCount=0;
 
-   return 1;
+    return 1;
 }
 
 int VehicleState::countCurrentTripStops()

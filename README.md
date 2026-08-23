@@ -2,6 +2,16 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260824_0102
+  - VehicleState
+    - added movingDirectionForward=
+    - added driverNumber
+  - new class Vdv301VehicleData for TVS
+  - Vdv301VehicleInformationGroup
+    - added movingDirectionForward
+    - added speakerActive
+    - added stopInformationActive
+
 - 20260823_2216
   - Vdv301Enumerations::RemoteControlMessageTypeEnumeration fix Start/Stop swap
   - added TicketRazzia functions
