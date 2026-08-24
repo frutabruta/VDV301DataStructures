@@ -51,6 +51,7 @@ public:
     Trip getCurrentTrip();
     StopPointDestination getCurrentStopPointDestination(bool &isNull);
 
+    StopPointDestination getNextStopPointDestination(bool &isNull);
 signals:
 
 public slots:

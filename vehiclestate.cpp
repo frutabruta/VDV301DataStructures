@@ -74,4 +74,28 @@ StopPointDestination VehicleState::getCurrentStopPointDestination(bool &isNull)
     return stopPointDestination;
 }
 
+StopPointDestination VehicleState::getNextStopPointDestination(bool &isNull)
+{
+    StopPointDestination stopPointDestination;
+    Trip currentTrip=getCurrentTrip();
+    if(currentTrip.globalStopPointDestinationList.isEmpty())
+    {
+        isNull=true;
+    }
+    else
+    {
+        if(currentStopIndex0<0)
+        {
+            isNull=true;
+        }
+        if((currentStopIndex0+1)<currentTrip.globalStopPointDestinationList.count())
+        {
+            stopPointDestination=currentTrip.globalStopPointDestinationList.at(currentStopIndex0+1);
+            isNull=false;
+        }
+    }
+
+    return stopPointDestination;
+}
+
 

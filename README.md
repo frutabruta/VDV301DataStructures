@@ -2,6 +2,9 @@
 Library of data storage classes for use with VDV301
 
 ## Changelog
+- 20260821_1129
+  - added VehicleState::getNextStopPointDestination
+  
 - 20260824_0102
   - VehicleState
     - added movingDirectionForward=
